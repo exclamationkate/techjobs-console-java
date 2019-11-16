@@ -21,6 +21,7 @@ public class JobData {
     private static Boolean isDataLoaded = false;
 
     private static ArrayList<HashMap<String, String>> allJobs;
+    private static ArrayList<HashMap<String, String>> copyOfAllJobs;
 
     /**
      * Fetch list of all values from loaded data,
@@ -52,7 +53,9 @@ public class JobData {
         // load data, if not already loaded
         loadData();
 
-        return allJobs;
+        copyOfAllJobs = new ArrayList<>(allJobs);
+
+        return copyOfAllJobs;
     }
 
     /**
